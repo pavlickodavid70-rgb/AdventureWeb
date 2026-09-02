@@ -1,0 +1,11 @@
+<svg width="1200" height="600" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="600" fill="lightblue"/>
+
+    <polygon points="0,600 350,150 700,600" fill="darkgreen"/>
+    <polygon points="450,600 800,100 1200,600" fill="green"/>
+
+    <polygon points="350,150 280,240 330,220 350,250 380,210 420,260"
+             fill="white"/>
+
+    <circle cx="950" cy="120" r="70" fill="yellow"/>
+</svg>
