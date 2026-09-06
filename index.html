@@ -9,8 +9,8 @@
 </head>
 
 <body>
-<<nav>
-
+<nav>
+<a href="#" class="logo">Adventure Slovakia</a>
     <button class="menu-button" onclick="toggleMenu()">☰</button>
 
     <div class="nav-links" id="navLinks">
@@ -54,7 +54,7 @@
 
 </div>
 
-        <<<div class="card">
+    <div class="card">
 
     <img src="climbing.jpeg" alt="Lezenie na skalách">
 
@@ -70,7 +70,7 @@
 
 </div>
 
-       <div class="card">
+       <div class="card featured">
 
     <img src="Paragliding.jpg" alt="Paragliding">
 
@@ -142,17 +142,36 @@
 </section>
 <section id="onas">
 
-    <h2>O nás</h2>
+    <div class="about-content">
+<div class="about-image">
+    <img src="raymond-petrik-e3MUtPDF67Y-unsplash.jpg" alt="Slovenské hory">
+</div>
+        <div class="about-text">
+            <h2>O nás</h2>
 
-    <p>
-        Sme tím ľudí, ktorí milujú dobrodružstvo,
-        hory a slovenskú prírodu.
-    </p>
+            <p>
+                Sme tím ľudí, ktorí milujú dobrodružstvo,
+                hory a slovenskú prírodu.
+            </p>
 
-    <p>
-        Organizujeme zážitkové výlety pre všetkých,
-        ktorí chcú zažiť niečo nové.
-    </p>
+            <p>
+                Organizujeme zážitkové výlety pre všetkých,
+                ktorí chcú zažiť niečo nové a nezabudnuteľné.
+            </p>
+        </div>
+
+        <div class="about-card">
+            <h3>🌲 Prečo Adventure Slovakia?</h3>
+
+            <p>✓ Skúsení sprievodcovia</p>
+            <p>✓ Krásna slovenská príroda</p>
+            <p>✓ Bezpečné dobrodružstvo</p>
+            <p>✓ Nezabudnuteľné zážitky</p>
+        </div>
+
+    </div>
+
+</section>
 
 <section id="cennik">
 
@@ -213,16 +232,14 @@
 
     <p>Chceš zažiť dobrodružstvo? Napíš nám!</p>
 
-    <form id="contactForm"></form>
+   <form action="https://formspree.io/f/xaedynr" method="POST">
+    <label for="Adventure Slovakia Contact">Meno</label>
+       <input type="text" id="meno" name="meno" placeholder="Adventure Slovakia Contact" required>
 
-        <label for="meno">Meno</label>
-        <input type="text" id="meno" placeholder="Tvoje meno">
-
-        <label for="email">E-mail</label>
-        <input type="email" id="email" placeholder="Tvoj e-mail">
-
+        <label for="pavlickodavid70@gmail.com">E-mail</label>
+        <input type="email" id="email" name="email" placeholder="pavlickodavid70@gmail.com" required>
         <label for="sprava">Správa</label>
-        <textarea id="sprava" placeholder="Napíš nám..."></textarea>
+        <textarea id="sprava" name="sprava" placeholder="Napíš nám..." required></textarea>
 
         <button type="submit">Odoslať</button>
 
