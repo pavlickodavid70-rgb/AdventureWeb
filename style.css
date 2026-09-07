@@ -1,3 +1,6 @@
+html {
+    scroll-behavior: smooth;
+}
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -25,10 +28,16 @@ body {
 
 .hero h1 {
     font-size: 60px;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 .hero p {
     font-size: 22px;
+    max-width: 600px;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
 .button {
@@ -39,22 +48,32 @@ body {
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
-    .button:hover {
-    transform: scale(1.05);
+   .button:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 }
-nav {
+    nav {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 90%;
+    max-width: 1100px;
+
     display: flex;
     justify-content: center;
+    align-items: center;
     gap: 30px;
-    
-    padding: 25px 0;
-    
+
+    padding: 15px 20px;
+
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(10px);
+
+    border-radius: 15px;
+
     z-index: 10;
 }
 
@@ -101,8 +120,8 @@ nav a:hover {
 }
 
 .card:hover {
-    transform: translateY(-10px) scale(1.03);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
 }
 
 .card h3 {
@@ -144,11 +163,15 @@ nav a:hover {
     color: #222;
     transform: scale(1.05);
 }
+lign: center;
 .detail {
     padding: 80px 30px;
     max-width: 800px;
-    margin: 0 auto;
+    margin: 40px auto;
     text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
 }
 
 .detail h2 {
@@ -165,12 +188,11 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
 }
-    nav {
-        gap: 12px;
-        padding: 20px 10px;
-        flex-wrap: wrap;
-    }
-
+  nav {
+    justify-content: space-between;
+    gap: 10px;
+    padding: 15px;
+}
     nav a {
         font-size: 14px;
     }
@@ -287,6 +309,14 @@ footer p {
 }
 
 @media (max-width: 768px) {
+    .about-image {
+    width: 100%;
+}
+
+.about-image img {
+    height: 180px;
+}
+}
 
     .menu-button {
         display: block;
@@ -307,5 +337,90 @@ footer p {
     .nav-links.active {
         display: flex;
     }
+    .logo {
+    font-size: 18px;
+}
+.about-content {
+    flex-direction: column;
+    gap: 30px;
+}
 
+.about-text {
+    text-align: center;
+}
+}
+.about-content {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 60px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+}
+
+.about-card {
+    flex: 1;
+    background-color: white;
+    padding: 35px;
+    border-radius: 15px;
+
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    text-align: left;
+}
+
+.about-card h3 {
+    font-size: 24px;
+    margin-top: 0;
+}
+
+.about-card p {
+    margin: 15px 0 !important;
+}
+.about-image {
+    flex: 1;
+}
+
+.about-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+.featured {
+    border: 3px solid darkgreen;
+    transform: scale(1.03);
+}
+
+.featured:hover {
+    transform: translateY(-10px) scale(1.06);
+}
+.logo {
+    color: white;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    margin-right: auto;
+}
+body {
+    animation: pageLoad 0.8s ease;
+}
+
+@keyframes pageLoad {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
