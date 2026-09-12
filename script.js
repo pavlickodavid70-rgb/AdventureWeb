@@ -1,14 +1,4 @@
-const form = document.getElementById("contactForm");
 
-form.addEventListener("submit", function(event) {
-
-    event.preventDefault();
-
-    alert("Ďakujeme! Tvoja správa bola odoslaná.");
-
-    form.reset();
-
-});
 function toggleMenu() {
 
     const navLinks = document.getElementById("navLinks");
@@ -16,3 +6,34 @@ function toggleMenu() {
     navLinks.classList.toggle("active");
 
 }
+const menuLinks = document.querySelectorAll(".nav-links a");
+
+menuLinks.forEach(function(link) {
+    link.addEventListener("click", function() {
+        document.getElementById("navLinks").classList.remove("active");
+    });
+});
+const aktivita = document.getElementById("aktivita");
+const osoby = document.getElementById("osoby");
+const cena = document.getElementById("cena");
+const skrytaCena = document.getElementById("skrytaCena");
+function vypocitajCenu() {
+    let cenaZaOsobu = 0;
+
+    if (aktivita.value === "Turistika") {
+        cenaZaOsobu = 25;
+    } else if (aktivita.value === "Lezenie") {
+        cenaZaOsobu = 40;
+    } else if (aktivita.value === "Paragliding") {
+        cenaZaOsobu = 80;
+    }
+
+    const pocetOsob = Number(osoby.value) || 0;
+    const celkovaCena = cenaZaOsobu * pocetOsob;
+
+    cena.textContent = "Cena: " + celkovaCena + " €";
+    skrytaCena.value = celkovaCena + " €";
+}
+
+aktivita.addEventListener("change", vypocitajCenu);
+osoby.addEventListener("change", vypocitajCenu);
