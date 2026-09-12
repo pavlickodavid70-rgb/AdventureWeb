@@ -163,7 +163,7 @@ nav a:hover {
     color: #222;
     transform: scale(1.05);
 }
-lign: center;
+
 .detail {
     padding: 80px 30px;
     max-width: 800px;
@@ -351,7 +351,7 @@ footer p {
 .about-text {
     text-align: center;
 }
-}
+
 .about-content {
     max-width: 1000px;
     margin: 0 auto;
@@ -390,13 +390,13 @@ footer p {
     flex: 1;
 }
 
- {.about-image img
+.about-image img {
     width: 100%;
     height: 350px;
     object-fit: cover;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
-}
+
 .featured {
     border: 3px solid darkgreen;
     transform: scale(1.03);
@@ -426,4 +426,15 @@ body {
         opacity: 1;
         transform: translateY(0);
     }
+}
+
+}
+form h3 {
+    font-size: 24px;
+    margin: 20px 0 10px;
+    text-align: center;
+}
+form select,
+form input[type="date"] {
+    cursor: pointer;
 }
