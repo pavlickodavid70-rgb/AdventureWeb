@@ -238,9 +238,36 @@
 
         <label for="email">E-mail</label>
         <input type="email" id="email" name="email" placeholder="pavlickodavid70@gmail.com" required>
+        <label for="telefon">Telefón</label>
+<input type="tel" id="telefon" name="telefon" placeholder="Tvoje telefónne číslo" required>
         <label for="sprava">Správa</label>
         <textarea id="sprava" name="sprava" placeholder="Napíš nám..." required></textarea>
+        <h3>📅 Rezervácia dobrodružstva</h3>
+        <label for="aktivita">Vyber aktivitu</label>
 
+<select id="aktivita" name="aktivita" required>
+    <option value="">-- Vyber aktivitu --</option>
+    <option value="Turistika">🥾 Turistika</option>
+    <option value="Lezenie">🧗 Lezenie</option>
+    <option value="Paragliding">🪂 Paragliding</option>
+</select>
+<label for="datum">Vyber dátum</label>
+<input type="date" id="datum" name="datum" min="2026-09-10" required>
+<label for="cas">Vyber čas</label>
+<input type="time" id="cas" name="cas" min="08:00" max="18:00" required>
+<label for="osoby">Počet osôb</label>
+
+<select id="osoby" name="osoby" required>
+    <option value="">-- Vyber počet osôb --</option>
+    <option value="1">1 osoba</option>
+    <option value="2">2 osoby</option>
+    <option value="3">3 osoby</option>
+    <option value="4">4 osoby</option>
+    <option value="5">5 osôb</option>
+    <option value="6">6 osôb</option>
+</select>
+<p id="cena">Cena: 0 €</p>
+<input type="hidden" id="skrytaCena" name="cena" value="0 €">
         <button type="submit">Odoslať</button>
 
     </form>
