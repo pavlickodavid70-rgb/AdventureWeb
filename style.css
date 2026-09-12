@@ -48,11 +48,13 @@ body {
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
-   .button:hover {
+}
+
+.button:hover {
     transform: translateY(-4px) scale(1.05);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
-}
+
     nav {
     position: absolute;
     top: 20px;
