@@ -37,3 +37,8 @@ function vypocitajCenu() {
 
 aktivita.addEventListener("change", vypocitajCenu);
 osoby.addEventListener("change", vypocitajCenu);
+const formular = document.querySelector("form");
+
+formular.addEventListener("submit", function() {
+    alert("Ďakujeme! Tvoja rezervácia bola odoslaná.");
+});
