@@ -37,8 +37,29 @@ function vypocitajCenu() {
 
 aktivita.addEventListener("change", vypocitajCenu);
 osoby.addEventListener("change", vypocitajCenu);
-const formular = document.querySelector("form");
+const formular = document.getElementById("contactForm");
+const spravaUspesne = document.getElementById("spravaUspesne");
 
-formular.addEventListener("submit", function() {
-    alert("Ďakujeme! Tvoja rezervácia bola odoslaná.");
+formular.addEventListener("submit", async function(event) {
+    event.preventDefault();
+
+    const data = new FormData(formular);
+
+    const response = await fetch(formular.action, {
+        method: "POST",
+        body: data,
+        headers: {
+            "Accept": "application/json"
+        }
+    });
+
+    if (response.ok) {
+        spravaUspesne.textContent =
+            "✅ Rezervácia bola odoslaná! Ďakujeme, čoskoro ťa budeme kontaktovať.";
+
+        formular.reset();
+    } else {
+        spravaUspesne.textContent =
+            "❌ Nastala chyba. Skús to prosím znova.";
+    }
 });
