@@ -11,7 +11,7 @@
 <body>
 <nav>
 <a href="#" class="logo">Adventure Slovakia</a>
-    <button class="menu-button" onclick="toggleMenu()">☰</button>
+  <button class="menu-button" id="menuButton" onclick="toggleMenu()">☰</button>
 
     <div class="nav-links" id="navLinks">
         <a href="#aktivity">Aktivity</a>
@@ -38,7 +38,7 @@
 
     <div class="cards">
 
-       <div class="card">
+       <div class="activity-card scroll-card">
 
     <img src="32A079.jpg" alt="Turistika v horách">
 
@@ -54,7 +54,7 @@
 
 </div>
 
-    <div class="card">
+   <div class="activity-card scroll-card">
 
     <img src="climbing.jpeg" alt="Lezenie na skalách">
 
@@ -70,7 +70,7 @@
 
 </div>
 
-       <div class="card featured">
+       <div class="activity-card scroll-card">
 
     <img src="Paragliding.jpg" alt="Paragliding">
 
@@ -101,44 +101,88 @@
     <p>📍 Vysoké Tatry</p>
 
     <p>💰 Cena: 90 € / osoba</p>
+    <a href="#kontakt" class="card-button">
+    Objednať paragliding
+</a>
+
+<a href="#aktivity" class="back-button">
+    ← Späť na aktivity
+</a>
+
+</section></section>
+<section id="turistika" class="detail">
+
+    <div class="detail-content">
+
+        <div class="detail-image">
+            <img src="32A079.jpg" alt="Turistika vo Vysokých Tatrách">
+        </div>
+
+        <div class="detail-text">
+
+            <h2>🥾 Turistika</h2>
+
+            <p>
+                Objav slovenské hory s našimi skúsenými sprievodcami.
+                Čakajú ťa krásne výhľady, príroda a nezabudnuteľné
+                dobrodružstvo vo Vysokých Tatrách.
+            </p>
+
+            <p>
+                🕐 Trvanie: približne 5 hodín
+            </p>
+
+            <p>
+                📍 Miesto: Vysoké Tatry
+            </p>
+
+            <p>
+                💰 Cena: 25 € / osoba
+            </p>
+
+            <a href="#kontakt" class="card-button">
+                Objednať turistiku
+            </a>
+
+            <a href="#aktivity" class="back-button">
+                ← Späť na aktivity
+            </a>
+
+        </div>
+
+    </div>
 
 </section>
 <section id="lezenie" class="detail">
+    <h2>Lezenie</h2>
 
-    <h2>🧗 Lezenie</h2>
-
-    <p>
-        Vyskúšaj si lezenie na slovenských skalách
-        pod dohľadom skúsených sprievodcov.
+    <p class="detail-text">
+        Objavte lezenie s naším skúseným sprievodcom.
+        Čakajú vás krásne skalné prostredie, nové výzvy
+        a zážitok, na ktorý nezabudnete.
     </p>
 
-    <p>🕐 Trvanie: približne 4 hodiny</p>
+    <p>
+        🧗 Trvanie: 4 hodiny
+    </p>
 
-    <p>📍 Slovenský raj</p>
+    <p>
+        📍 Lokalita: Vysoké Tatry
+    </p>
 
-    <p>💰 Cena: 40 € / osoba</p>
+    <p>
+        💶 Cena: 40 € / osoba
+    </p>
+
+    <a href="#kontakt" class="card-button">
+        Objednať lezenie
+    </a>
+
+    <a href="#aktivity" class="back-button">
+        ← Späť na aktivity
+    </a>
 
 </section>
-<section id="turistika" class="detail">
-
-    <h2>🥾 Turistika</h2>
-
-    <p>
-        Objav slovenské hory s našimi skúsenými sprievodcami.
-    </p>
-
-    <p>
-        🕐 Trvanie: približne 5 hodín
-    </p>
-
-    <p>
-        📍 Vysoké Tatry
-    </p>
-
-    <p>
-        💰 Cena: 25 € / osoba
-    </p>
-
 </section>
 <section id="onas">
 
@@ -186,8 +230,9 @@
             <a href="#kontakt" class="card-button">Objednať</a>
         </div>
 
-        <div class="price-card">
-            <h3>🧗 Lezenie</h3>
+        <div class="price-card featured">
+            <span class="popular-badge">⭐ Najobľúbenejšie</span>
+    <h3>🧗 Lezenie</h3>
             <p class="price">40 €</p>
             <p>4 hodiny lezenia so skúseným sprievodcom.</p>
             <a href="#kontakt" class="card-button">Objednať</a>
@@ -203,29 +248,7 @@
     </div>
 
 </section>
-    <h2>Cenník</h2>
 
-    <h3>🥾 Turistika</h3>
-    <p>25 € / osoba</p>
-
-    <h3>🧗 Lezenie</h3>
-    <p>40 € / osoba</p>
-
-    <h3>🪂 Paragliding</h3>
-    <p>90 € / osoba</p>
-
-</section>
-<section id="kontakt">
-
-    <h2>Kontakt</h2>
-
-    <p>📍 Košice, Slovensko</p>
-
-    <p>📞 +421 900 123 456</p>
-
-    <p>✉️ info@adventureslovakia.sk</p>
-
-</section>
 <section id="kontakt">
 
     <h2>Kontakt</h2>
@@ -237,11 +260,31 @@
        <input type="text" id="meno" name="meno" placeholder="Adventure Slovakia Contact" required>
 
         <label for="email">E-mail</label>
-        <input type="email" id="email" name="email" placeholder="pavlickodavid70@gmail.com" required>
+        <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Tvoj e-mail"
+    required
+>
         <label for="telefon">Telefón</label>
-<input type="tel" id="telefon" name="telefon" placeholder="Tvoje telefónne číslo" required>
+<input
+    type="tel"
+    id="telefon"
+    name="telefon"
+    placeholder="Tvoje telefónne číslo"
+    pattern="[0-9+ ]{9,15}"
+    title="Zadaj platné telefónne číslo"
+    required
+>
         <label for="sprava">Správa</label>
-        <textarea id="sprava" name="sprava" placeholder="Napíš nám..." required></textarea>
+       <textarea
+    id="sprava"
+    name="sprava"
+    placeholder="Napíš nám..."
+    minlength="10"
+    required
+></textarea>
         <h3>📅 Rezervácia dobrodružstva</h3>
         <label for="aktivita">Vyber aktivitu</label>
 
@@ -252,7 +295,7 @@
     <option value="Paragliding">🪂 Paragliding</option>
 </select>
 <label for="datum">Vyber dátum</label>
-<input type="date" id="datum" name="datum" min="2026-09-10" required>
+<input type="date" id="datum" name="datum" required>
 <label for="cas">Vyber čas</label>
 <input type="time" id="cas" name="cas" min="08:00" max="18:00" required>
 <label for="osoby">Počet osôb</label>
@@ -266,7 +309,8 @@
     <option value="5">5 osôb</option>
     <option value="6">6 osôb</option>
 </select>
-<p id="cena">Cena: 0 €</p>
+<p id="cenaZaOsobu">Cena za osobu: —</p>
+<p id="cena">Celková cena: —</p>
 <input type="hidden" id="skrytaCena" name="cena" value="0 €">
         <button type="submit">Odoslať</button>
         <p id="spravaUspesne"></p>

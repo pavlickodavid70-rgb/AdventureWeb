@@ -31,13 +31,20 @@ body {
     margin-bottom: 10px;
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
+.hero h1 {
+    font-size: 60px;
+    margin-bottom: 10px;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 
+    animation: heroZobrazenie 1s ease;
+}
 .hero p {
     font-size: 22px;
     max-width: 600px;
     line-height: 1.6;
     margin-bottom: 30px;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    animation: heroZobrazenie 1s ease 0.3s both;
 }
 
 .button {
@@ -48,6 +55,7 @@ body {
     text-decoration: none;
     border-radius: 10px;
     font-weight: bold;
+    animation: heroZobrazenie 1s ease 0.6s both;
 }
 
 .button:hover {
@@ -87,9 +95,9 @@ nav a {
     
     transition: 0.3s;
 }
-
 nav a:hover {
     color: #7cff9b;
+    transform: translateY(-2px);
 }
 #aktivity {
     padding: 80px 30px;
@@ -119,6 +127,7 @@ nav a:hover {
 
     transition: 0.3s;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: kartaZobrazenie 0.8s ease both;
 }
 
 .card:hover {
@@ -141,41 +150,63 @@ nav a:hover {
     border-radius: 10px;
     display: block;
     margin-bottom: 20px;
-}
-.card-button {
-    
+}.card-button {
     display: inline-block;
     background-color: darkgreen;
     color: white;
-
-    padding: 12px 20px;
-
     text-decoration: none;
-    border-radius: 8px;
-
+    padding: 12px 24px;
+    border-radius: 25px;
     font-weight: bold;
-
-    margin-top: 10px;
-
-    transition: 0.3s;
+    transition: 0.3s ease;
+    margin-top: 15px;
 }
 
 .card-button:hover {
-    background-color: #7cff9b;
-    color: #222;
-    transform: scale(1.05);
+    background-color: #0b5d1e;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
 }
 
+.card-button:active {
+    transform: scale(0.96);
+}
+.detail .card-button {
+    margin-right: 10px;
+}
 .detail {
-    padding: 80px 30px;
-    max-width: 800px;
-    margin: 40px auto;
-    text-align: center;
+
+    padding: 40px 30px;
+
+    max-width: 1100px;
+
+    margin: 60px auto;
+
     background-color: white;
+
     border-radius: 20px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+
+}
+.detail-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
 }
 
+.detail-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+.detail-text h2 {
+    margin-top: 0;
+}
 .detail h2 {
     font-size: 40px;
     margin-bottom: 25px;
@@ -435,7 +466,14 @@ footer p {
     height: 350px;
     object-fit: cover;
     border-radius: 15px;
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);}
+    .about-image img {
+    transition: 0.3s ease;
+}
+
+.about-image img:hover {
+    transform: scale(1.03);
+}
 
 .featured {
     border: 3px solid darkgreen;
@@ -468,7 +506,7 @@ body {
     }
 }
 
-}
+
 form h3 {
     font-size: 24px;
     margin: 20px 0 10px;
@@ -496,4 +534,242 @@ form button {
 form button:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+@keyframes heroZobrazenie {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes kartaZobrazenie {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.popular-badge {
+    display: inline-block;
+    background-color: darkgreen;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+#cena {
+    font-size: 28px;
+    font-weight: bold;
+    color: darkgreen;
+    text-align: center;
+    margin: 20px 0;
+}
+form input:focus,
+form textarea:focus,
+form select:focus {
+    outline: none;
+    border-color: darkgreen;
+    box-shadow: 0 0 0 3px rgba(0, 100, 0, 0.15);
+}
+@media (max-width: 768px) {
+
+    form label {
+        display: block;
+        margin-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    form input,
+    form textarea,
+    form select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    form textarea {
+        min-height: 120px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    #aktivita,
+    #datum,
+    #cas,
+    #osoby {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+}
+@media (max-width: 768px) {
+
+    #cenaZaOsobu {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    #cena {
+        font-size: 32px;
+        margin: 15px 0 25px;
+    }
+
+}
+form button:active {
+    transform: scale(0.90);
+}
+form button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+#spravaUspesne {
+    color: darkgreen;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+}
+section h2 {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 30px;
+}
+
+section h2::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: darkgreen;
+    border-radius: 5px;
+    margin: 10px auto 0;
+}
+.button {
+    transition: 0.3s ease;
+}
+
+.button:hover {
+    transform: translateY(-3px) scale(1.03);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.25);
+}
+
+.button:active {
+    transform: scale(0.96);
+}
+.button:hover {
+    transform: translateY(-4px) scale(1.05) !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+.scroll-card {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: 0.7s ease;
+}
+
+.scroll-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.activity-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    border-radius: 12px;
+    display: block;
+}
+@media (max-width: 768px) {
+    .activity-card img {
+        height: 180px;
+    }
+}
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.activity-card {
+    width: 100%;
+    box-sizing: border-box;
+}
+@media (max-width: 768px) {
+    .cards {
+        grid-template-columns: 1fr;
+    }
+}
+.detail-content {
+    flex-direction: column;
+    text-align: center;
+}
+
+.detail-image img {
+    max-width: 100%;
+}
+
+.detail-text h2 {
+    font-size: 32px;
+}
+.detail-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.detail-image img {
+    height: 220px;
+}
+
+.detail {
+    padding: 30px 20px;
+}
+.detail-content {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    text-align: left;
+}
+.detail-image {
+    flex: 1;
+}
+
+.detail-image img {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 15px;
+    display: block;
+}
+.detail-text {
+    flex: 1;
+}
+.detail-text h2 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+.detail-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+.back-button {
+    display: inline-block;
+    margin-top: 15px;
+    margin-left: 10px;
+    color: darkgreen;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.back-button:hover {
+    color: #0b5d1e;
+    transform: translateX(-4px);
 }
