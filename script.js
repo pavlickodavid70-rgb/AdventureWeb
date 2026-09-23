@@ -17,6 +17,7 @@ const menuLinks = document.querySelectorAll(".nav-links a");
 menuLinks.forEach(function(link) {
     link.addEventListener("click", function() {
         document.getElementById("navLinks").classList.remove("active");
+        menuButton.textContent = "☰";
     });
 });
 const aktivita = document.getElementById("aktivita");
@@ -77,7 +78,7 @@ formular.addEventListener("submit", async function(event) {
     tlacidlo.disabled = true;
 
     const data = new FormData(formular);
-
+try {
     const response = await fetch(formular.action, {
         method: "POST",
         body: data,
@@ -106,7 +107,17 @@ formular.addEventListener("submit", async function(event) {
         tlacidlo.textContent = "Odoslať";
         tlacidlo.disabled = false;
     }
-});const scrollCards = document.querySelectorAll(".scroll-card");
+
+} catch (error) {
+    spravaUspesne.textContent =
+        "❌ Nepodarilo sa odoslať rezerváciu. Skontroluj internetové pripojenie a skús to znova.";
+
+    tlacidlo.textContent = "Odoslať";
+    tlacidlo.disabled = false;
+}
+});
+
+const scrollCards = document.querySelectorAll(".scroll-card");
 
 const observer = new IntersectionObserver(function(entries) {
     entries.forEach(function(entry) {
