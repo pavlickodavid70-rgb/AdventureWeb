@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pavlickodavid70-rgb.github.io/AdventureWeb/sitemap.xml
